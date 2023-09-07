@@ -36,6 +36,8 @@ def background_image_style(path):
     <style>
     .stApp {{
         background-image: url("data:image/png;base64,{encoded}");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
         background-size: cover;
     }}
     </style>
@@ -43,6 +45,8 @@ def background_image_style(path):
     return style
 
 st.write(background_image_style(image_path), unsafe_allow_html=True)
+
+
 
 def navigation():
     route = utl.get_current_route()

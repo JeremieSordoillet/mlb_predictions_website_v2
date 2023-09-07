@@ -2,10 +2,20 @@ import streamlit as st
 import pandas as pd
 import os
 import requests
-
+import base64
 
 def load_view():
     path = os.getcwd()
+    st.write(
+        """
+        <style>
+        .stApp {
+            margin-top: -120px;
+        }
+        </style>
+        """,unsafe_allow_html=True
+    )
+
     # Define a dictionary of players and their corresponding teams
     pitchers = pd.read_csv(f"{path}/data/pitchers.csv", index_col=0)
 
